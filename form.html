@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>نموذج بيانات الطالب</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>نموذج تسجيل بيانات الطالب</h2>
+        <form id="studentForm">
+            <label for="name">اسم الطالب:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="seatNumber">رقم الجلوس:</label>
+            <input type="number" id="seatNumber" name="seatNumber" required>
+
+            <label for="nationalID">الرقم القومي:</label>
+            <input type="number" id="nationalID" name="nationalID" required>
+
+            <button type="submit">أكمل</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("studentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const seatNumber = document.getElementById("seatNumber").value;
+            const nationalID = document.getElementById("nationalID").value;
+            window.location.href = `result.html?name=${encodeURIComponent(name)}&seat=${seatNumber}&id=${nationalID}`;
+        });
+    </script>
+</body>
+</html>
