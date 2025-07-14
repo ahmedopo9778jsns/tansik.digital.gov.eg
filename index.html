@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>وزارة التربية والتعليم</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="moe-header">
+      <img src="logo.png" alt="شعار وزارة التربية والتعليم" class="moe-logo">
+      <h1>وزارة التربية والتعليم</h1>
+    </header>
+    <h2>نتيجة الثانوية العامة 2025</h2>
+    <form onsubmit="goToResult(event)">
+      <label>اسم الطالب:</label>
+      <input type="text" id="name" required>
+
+      <label>رقم الجلوس:</label>
+      <input type="text" id="seat" required>
+
+      <label>الرقم القومي:</label>
+      <input type="text" id="nid" required>
+
+      <label>شعبة الطالب:</label>
+      <select id="division" required>
+        <option value="">-- اختر الشعبة --</option>
+        <option value="علمي علوم">علمي علوم</option>
+        <option value="علمي رياضة">علمي رياضة</option>
+        <option value="أدبي">أدبي</option>
+      </select>
+
+      <button type="submit">عرض النتيجة</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

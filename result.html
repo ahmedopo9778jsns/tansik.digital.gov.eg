@@ -1,47 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>شهادة الثانوية العامة 2025</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>نتيجة الطالب</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="certificate-container">
-        <h1>وزارة التربية والتعليم والتعليم الفني</h1>
-        <h2>شهادة الثانوية العامة 2025</h2>
-        <p><strong>اسم الطالب:</strong> <span id="studentName"></span></p>
-        <p><strong>رقم الجلوس:</strong> <span id="seatNumber"></span></p>
-        <p><strong>الرقم القومي:</strong> <span id="nationalID"></span></p>
-        <hr>
-        <h3>النتائج:</h3>
-        <ul id="gradesList"></ul>
-    </div>
+  <div class="container">
+    <header class="moe-header">
+      <img src="logo.png" alt="شعار وزارة التربية والتعليم" class="moe-logo">
+      <h1>وزارة التربية والتعليم</h1>
+    </header>
+    <h2>نتيجة الثانوية العامة 2025</h2>
+    <p><strong>اسم الطالب:</strong> <span id="name"></span></p>
+    <p><strong>رقم الجلوس:</strong> <span id="seat"></span></p>
+    <p><strong>الرقم القومي:</strong> <span id="nid"></span></p>
+    <p><strong>شعبة الطالب:</strong> <span id="division"></span></p>
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const name = urlParams.get('name');
-        const seat = urlParams.get('seat');
-        const id = urlParams.get('id');
-        const subjects = [
-            "اللغة العربية", "اللغة الإنجليزية", "الرياضيات", "الفيزياء", "الكيمياء", "الأحياء", "التاريخ", "الجغرافيا"
-        ];
-
-        function getRandomGrade() {
-            const grades = ["ممتاز", "جيد جدًا", "جيد", "مقبول"];
-            return grades[Math.floor(Math.random() * grades.length)];
-        }
-
-        document.getElementById("studentName").textContent = name;
-        document.getElementById("seatNumber").textContent = seat;
-        document.getElementById("nationalID").textContent = id;
-
-        const gradesList = document.getElementById("gradesList");
-        subjects.forEach(subject => {
-            const li = document.createElement("li");
-            li.textContent = `${subject}: ${getRandomGrade()}`;
-            gradesList.appendChild(li);
-        });
-    </script>
+    <h3>الدرجات:</h3>
+    <ul id="grades"></ul>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
