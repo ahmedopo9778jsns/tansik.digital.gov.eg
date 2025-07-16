@@ -45,10 +45,10 @@ function generateGrades(division) {
       grade = 0;
     } else {
       if (subject === "اللغة العربية") {
-        grade = Math.floor(Math.random() * 31) + 50; // 70 إلى 80
-      } else {
-        grade = Math.floor(Math.random() * 31) + 30; // 55 إلى 60
-      }
+    grade = Math.floor(Math.random() * (80 - 73 + 1)) + 73; // من 73 إلى 80
+} else {
+    grade = Math.floor(Math.random() * (60 - 54 + 1)) + 54; // من 54 إلى 60
+}
     }
 
     return {
